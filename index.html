@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Page metadata and stylesheet -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#081225">
+    <title>Mini Library System | Raghavendra Illale</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <!-- Page title and introduction -->
+        <header class="hero">
+            <div class="eyebrow">PYTHON PROJECT · WEB VERSION</div>
+            <h1>Mini Library System</h1>
+            <p>A simple library manager built by <strong>Raghavendra Illale</strong>.</p>
+            <p class="intro">Add books, keep track of available copies, and manage borrowing and returns.</p>
+        </header>
+
+        <!-- Live library totals -->
+        <section class="stats" aria-label="Library statistics">
+            <div class="stat">
+                <span id="titleCount">0</span>
+                <small>Book titles</small>
+            </div>
+            <div class="stat">
+                <span id="copyCount">0</span>
+                <small>Available copies</small>
+            </div>
+        </section>
+
+        <!-- Form for adding books or copies -->
+        <section class="panel" aria-labelledby="add-heading">
+            <div class="section-heading">
+                <span class="section-icon">＋</span>
+                <div>
+                    <h2 id="add-heading">Add a book</h2>
+                    <p>Add a new title or increase the copies of an existing title.</p>
+                </div>
+            </div>
+            <form id="bookForm" class="form">
+                <label>
+                    <span>Book title</span>
+                    <input id="t" name="title" type="text" placeholder="e.g. Wings of Fire" required maxlength="100">
+                </label>
+                <label>
+                    <span>Author</span>
+                    <input id="a" name="author" type="text" placeholder="e.g. A. P. J. Abdul Kalam" required maxlength="100">
+                </label>
+                <label class="copies-field">
+                    <span>Copies</span>
+                    <input id="c" name="copies" type="number" value="1" min="1" max="999" step="1" required>
+                </label>
+                <button class="primary-button" type="submit">Add book <span aria-hidden="true">＋</span></button>
+            </form>
+            <p id="message" class="message" role="status" aria-live="polite"></p>
+        </section>
+
+        <!-- Current book collection -->
+        <section class="shelf-section" aria-labelledby="shelf-heading">
+            <div class="shelf-top">
+                <div>
+                    <h2 id="shelf-heading">Books on the shelf</h2>
+                    <p class="section-subtitle">Manage each title below.</p>
+                </div>
+                <span id="shelfLabel" class="shelf-label">3 titles</span>
+            </div>
+            <div id="shelf" class="shelf"></div>
+            <p id="emptyState" class="empty-state" hidden>Your library is empty. Add a book to get started.</p>
+        </section>
+
+        <!-- Project attribution -->
+        <footer>
+            <p>Built with HTML, CSS and JavaScript · Mini Library System</p>
+            <p class="footer-sub">Python-inspired project by Raghavendra Illale</p>
+        </footer>
+    </main>
+    <!-- Library interactions -->
+    <script src="script.js"></script>
+</body>
+</html>
